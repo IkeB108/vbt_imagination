@@ -149,7 +149,6 @@ function setup() {
   createCanvasEventListeners();
   logMouse = false;
   
-  drawings[drawings.length - 1].y = height/2; //Y coord of text image
   
   
   full_drawings_indeces = [];
@@ -168,6 +167,8 @@ function setup() {
     di.x *= width_of_display_gallery/width_of_full;
     di.y *= height/height_of_full
   }
+  
+  drawings[drawings.length - 1].y = height/2; //Y coord of text image
   
   // for(var i = 0; i < drawings.length; i ++){
   //   var di = drawings[i];
@@ -259,7 +260,7 @@ function updateDrawings(){
   }
   
   if(drawings[18].x < -1 * (drawings[18].w) ){
-    nativeLog("Loop time")
+    //nativeLog("Loop time")
     for(var i = 0; i < drawings.length; i ++){
       var di = drawings[i]
       var x = int(layersPlacement[i][0]) * (di.z * 2)
