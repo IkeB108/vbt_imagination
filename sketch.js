@@ -16,7 +16,6 @@ imagesLoaded = 0;
 setInterval( ()=> {
   if(typeof loadingScreenGone == "undefined"){
     let loadingText = document.getElementById("p5_loading")
-    console.log(loadingText)
     loadingText.innerHTML = "Loading... " + imagesLoaded + "/63 images"
   }
 }, 100)
