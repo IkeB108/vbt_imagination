@@ -11,6 +11,15 @@ for publishing the project.
 
 placementMode = false;
 //When true, user can drag around drawings and they won't have depth
+imagesLoaded = 0;
+
+setInterval( ()=> {
+  if(typeof loadingScreenGone == "undefined"){
+    let loadingText = document.getElementById("p5_loading")
+    console.log(loadingText)
+    loadingText.innerHTML = "Loading... " + imagesLoaded + "/63 images"
+  }
+}, 100)
 
 function preload(){
   paper_image = loadImage("Photos/paper.png")
@@ -123,15 +132,17 @@ function preload(){
   } )
 }
 
-function successCall(){};
+function successCall(){
+  imagesLoaded ++;
+};
 
 function failCall(e){
-  console.log(e);
-  console.log(drawing_type)
 }
 
 
 function setup() {
+  loadingScreenGone = true;
+  
   pixelDensity(1);
   pxSpacing = 20;
   createCanvas(1,1)
